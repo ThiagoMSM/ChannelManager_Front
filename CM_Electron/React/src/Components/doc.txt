@@ -1,0 +1,7 @@
+"Components" fora de uma classe de páginas específica, ou seja,
+todos os componentes aqui são genéricos e são feitos para todas (ou quase todas) as
+páginas, independente da páginas
+
+Pasta "Components" dentro de uma classe de páginas, ex: React/src/Pages/Home/Components
+referem-se aos componentes da PRÓPRIA página, e não são desenhados para serem utilizados
+em outros lugares

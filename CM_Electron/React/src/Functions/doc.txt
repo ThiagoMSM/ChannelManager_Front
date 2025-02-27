@@ -1,0 +1,7 @@
+"Functions" fora de uma classe de páginas específica, ou seja,
+todos as funções aqui são genéricas e são feitos para todas (ou quase todas) as
+páginas, independente da páginas
+
+Pasta "Functions" dentro de uma classe de páginas, ex: React/src/Pages/Home/Functions
+referem-se às funções da PRÓPRIA página, e não são desenhadas para serem utilizadas
+em outros lugares

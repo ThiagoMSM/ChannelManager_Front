@@ -1,0 +1,7 @@
+"Assets" fora de uma classe de páginas específica, ou seja,
+todos os assets aqui são genéricas e são feitos para todas (ou quase todas) as
+páginas, independente da páginas
+
+Pasta "Assets" dentro de uma classe de páginas, ex: React/src/Pages/Home/Assets
+referem-se aos assets da PRÓPRIA página, e não são desenhados para serem utilizados
+em outros lugares
