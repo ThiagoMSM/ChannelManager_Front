@@ -1,8 +1,13 @@
+import PagHome from './Pages/Home/PagHome';
+import { BrowserRouter, Routes as RouterRoutes, Route, Navigate } from 'react-router-dom';
 
-function Routes() {
-  return (
-    <>Routes</>
-  )
+export default function AppRoutes() {
+    return (
+        <BrowserRouter>
+            <RouterRoutes>
+                <Route path="/" element={<Navigate to="/PagHome" />} />
+                <Route path="/PagHome" element={<PagHome />} />
+            </RouterRoutes>
+        </BrowserRouter>
+    )
 }
-
-export default Routes
