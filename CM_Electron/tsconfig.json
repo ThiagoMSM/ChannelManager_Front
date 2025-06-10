@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "jsx": "react-jsx",
-    "module": "commonjs",
+    "module": "commonjs", // precisa ser assim pq o electron forge é chato, esnext não dá
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -12,5 +12,10 @@
     "outDir": "dist",
     "moduleResolution": "node",
     "resolveJsonModule": true
-  }
+  },
+  "include": [
+    "src/**/*", // todas as pastas do src
+    "React/src/**/*", // todas as pastas do react/src
+    "**/*.d.ts" //qualquer d.ts em qualquer canto
+  ],
 }
