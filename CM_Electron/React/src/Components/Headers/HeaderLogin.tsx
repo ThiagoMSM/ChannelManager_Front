@@ -1,36 +1,36 @@
-//import logoComNome from '../../Assets/LogoComNome.svg'
+import logoComNome from '../../Assets/logoComNome.svg';
 
 function HeaderLogin() {
-    return (
-        <>
-            teste
-        </>
-    );
-};
+  return (
+    <header style={styles.header}>
+
+      <img src={logoComNome} alt="Logo" style={styles.logo} />
+      
+    </header>
+  );
+}
+
 
 const styles = {
     header: {
-        display: 'flex',
-        alignItems: 'center',
-        padding: '10px 20px',
-        backgroundColor: '#000',
-        width: '100%',
-        height: '60px',
-        position: 'fixed' as 'fixed',
-        top: 0,
-        left: 0,
-        zIndex: 1000,
+      backgroundColor: 'rgba(0, 0, 0, 0)',
+      border: '1px solid rgba(255, 255, 5, 1)',
+      width: '100vw',
+      height: '10vh',
+      position: 'fixed' as 'fixed',
+      top: 0,
+      left: 0,
+      right: 0,
+      display: 'flex',
+      justifyContent: 'left',
+      alignItems: 'center',
     },
     logo: {
-        width: '50px',
-        height: '50px',
-        marginRight: '15px',
+        width: 'auto',
+        height: '80%',
+          border: '1px solid rgba(255, 255, 5, 1)',
     },
-    title: {
-        color: 'white',
-        fontSize: '24px',
-        margin: 0,
-    },
+  
 };
 
 export default HeaderLogin;
