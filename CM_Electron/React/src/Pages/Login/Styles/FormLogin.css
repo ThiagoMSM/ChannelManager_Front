@@ -1,0 +1,173 @@
+.FormLogin {
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid #000; */
+    display: flex;
+}
+.BannerLogin{
+    width: 90%;
+    height: 90%;
+    /* border: 1px solid #00ff0d; */
+}
+.Banner{
+    /* border: 1px solid #00ff0d; */
+    padding: 0% 0% 0% 0%;
+    display: flex;
+    justify-content: center;   
+    align-items: center;
+    width: 55%;
+    height: -10px;
+
+}
+.BemVindo{
+    display: flex; 
+    text-align: left;
+    flex-direction:  column;
+    /* border: 1px solid #ffffff; */
+    width: 100%;
+    height: 15%;
+    padding-left: 4%;
+    font-family: Poppins; /*Add a fonte*/
+    color: #ffffff;
+    margin-top: 14%;
+    gap: 20px;
+    white-space: normal;
+    overflow: visible;
+    min-width: 300px;
+    min-height: 100px;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.BemVindoH1{
+    font-size: 40px;
+    width: 1%px;
+    height: 5px;
+    margin: 0 0 0 0;
+    display: inline;
+    white-space: nowrap;
+}
+.TextoSimples{
+    font-size: 15px;   
+    margin: 30px 0 0 0; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    /* border: solid 1px #ffffff; */
+    white-space: nowrap;
+   
+}
+.PCadastrar{
+     font-family: Poppins;
+    font-size: 13px;
+    color: #00ccff;
+    text-decoration: none;
+    
+}
+.PCadastrar:hover{
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+.InputContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 0 2% 0 2%;
+    /* border: 1px solid #ffffff; */
+}
+.email{
+    font-family: Poppins;
+    font-size: 13px;
+    color: #ffffff;
+}
+.Input{
+    
+    width: 90%;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #ffffff;
+    background-color: #ffffff;
+    padding-left: 10px;
+    font-family: Poppins;
+    font-size: 15px;
+    color: #000000;
+}
+.Input:focus{
+    outline: none;
+    border: 1px solid #00ccff;
+}
+.Input::placeholder{
+    color: #84818A;
+    font-family: Poppins;
+    font-size: 14px;
+}
+.Form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 2% 0 2%;
+    /* border: 1px solid #ff00aa; */
+    width: 100%;
+    margin-top: 10px;
+    
+}
+.BtnConecte{
+    width: 40%;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: #00ccff;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.CabecalhoForms{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5%;
+    padding-top: 0%;
+    /* border: 1px solid #ff00aa; */
+}
+.EsqueceuSenha{
+    font-family: Poppins;
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.EsqueceuSenha:hover{
+    color: #00ccff;
+}
+.Divisoria{
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    margin: 10px 0;
+}
+.TermosLabel{
+    font-family: Poppins;
+    font-size: 13px;
+    color: #ffffff;
+}
+.checkboxContainer {
+    display: flex;
+    align-items: center;
+    
+}
+.TermosLink{
+    font-family: Poppins;
+    font-size: 13px;
+    color: #00ccff;
+    text-decoration: none;
+}
+.TermosLink:hover{
+    text-decoration: underline;
+    color: #ffffff;
+}

@@ -14,8 +14,8 @@ function HeaderLogin() {
 const styles = {
     header: {
       backgroundColor: 'rgba(0, 0, 0, 0)',
-      border: '1px solid rgba(255, 255, 5, 1)',
-      width: '100vw',
+      // border: '1px solid rgba(255, 255, 5, 1)',
+      width: '100%',
       height: '10vh',
       position: 'fixed' as 'fixed',
       top: 0,
@@ -24,11 +24,12 @@ const styles = {
       display: 'flex',
       justifyContent: 'left',
       alignItems: 'center',
+      paddingLeft: '1%',
     },
     logo: {
         width: 'auto',
         height: '80%',
-          border: '1px solid rgba(255, 255, 5, 1)',
+          // border: '1px solid rgba(255, 255, 5, 1)',
     },
   
 };

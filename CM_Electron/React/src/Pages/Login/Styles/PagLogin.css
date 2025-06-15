@@ -1,20 +1,21 @@
 /* PagLogin.css */
-body {
+.PagLogin {
     background: linear-gradient(to top, #33D4F5, #004C5F);
-    font-family: Arial, sans-serif;
     height: 100vh;
-    margin: 0;
+    width: 100vw;
+    margin: 0 0 0 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow-y: hidden;
+    align-items: end;
+    /* border: 2px solid #a200fff8; */
+    
 }
 .forms{
     width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  
+    height:  90vh;
+    background-color: #fd040400;
+    /* border: solid 1px #f70000; */
+    display: flex;
+    justify-content: center;   
+    align-items: center;
 }
