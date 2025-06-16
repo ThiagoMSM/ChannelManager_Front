@@ -1,9 +1,37 @@
 import '../Styles/FormLogin.css';
 import BannerLogin from './../../../Assets/BannerLogin.svg' 
 import { useNavigate } from 'react-router';
+import ButtonLogin from './../../../Components/Button/ButtonLogin';
+import { useState } from 'react';
+
+
 
 function FormLogin() {
   const navigate = useNavigate();
+
+
+
+function ButtonCarregar({carregando, texto}:props) {
+    return (
+        <button className={carregando ? "loading-button" : ""}>
+            {carregando && <div className="loading-circle"></div>}
+            {carregando ? "Conectando" : texto}
+        </button>
+    )
+}
+function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  event.preventDefault(); 
+  const form = event.currentTarget;
+  const formData = new FormData(form);  
+  setCarregando(true);
+  setTimeout(() => {
+    setCarregando(false);
+    navigate('/PagFormPrincipal');
+  }, 1000);
+
+}
+
+const [carregando, setCarregando] = useState(false);
 
   return (
     <div className='FormLogin'>
@@ -16,7 +44,8 @@ function FormLogin() {
           <p className='BemVindoH1'>Bem vindo de volta!</p>
           <p className='TextoSimples'>Novo usuário? <a onClick={() => {navigate('/PagFormCadastro')}} className='PCadastrar'>Crie uma conta</a> </p> 
         </div>
-        <form className='Form' action="/Login" method="POST">
+        
+        <form className='Form' method="POST" onSubmit={handleSubmit}>
           <div className='InputContainer'>
           <label className="email">E-mail</label>
           <input 
@@ -26,6 +55,7 @@ function FormLogin() {
           name="email" 
           required
           placeholder='Digite seu e-mail' 
+
           />
           </div>
 
@@ -43,8 +73,11 @@ function FormLogin() {
           <div className='CabecalhoForms'>
 
           <a onClick={() => {navigate('/PagFormRecuperarSenha')}} className='EsqueceuSenha'>Esqueceu a senha?</a>
-          <button type="submit" className='BtnConecte'>Conecte-se</button>
-            
+
+   
+          {/* <button type="submit" className='BtnConecte'>Conecte-se</button> */}
+
+          <ButtonLogin carregando={carregando} FnType={'submit'} texto="Conectar-se" />
           </div>
 
           <hr className='Divisoria'/>
@@ -59,6 +92,7 @@ function FormLogin() {
           </div>
 
         </form>
+          
 
 
       </div>
