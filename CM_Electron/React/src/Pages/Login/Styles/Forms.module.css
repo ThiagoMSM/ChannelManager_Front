@@ -89,6 +89,7 @@
 .link{
     color: #333333;
     text-decoration: none;
+    cursor: pointer;
 }
 .link:hover{
     color: #000000;

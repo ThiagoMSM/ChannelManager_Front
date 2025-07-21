@@ -37,7 +37,9 @@ function FormCadastro({ selecionarFormulario }: PgCadastroProps) {
                     </span>
                     </div>
                 <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Cadastrar</button>
-                <div className={styles["forgot-login-div"]}> <a onClick={() => selecionarFormulario(3)} className={shared["link"]}>Esqueci Senha</a> </div>
+                <div className={styles["forgot-login-div"]}> <a onClick={() => selecionarFormulario(2)} className={shared["link"]}>Esqueci Senha</a> </div>
+{/* ????????????????? Botão de esqueci senha no cadastro não faz sentido, mas fiz mesmo assim */}
+
             </form>
   )
 }

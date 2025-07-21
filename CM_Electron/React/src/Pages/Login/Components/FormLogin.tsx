@@ -42,7 +42,7 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
                     </span>
                     </div>
                 <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Login</button>
-                <div className={styles["forgot-password-div"]}> <a onClick={() => selecionarFormulario(3)} className={shared["link"]}>Esqueci Senha</a> </div>
+                <div className={styles["forgot-password-div"]}> <a onClick={() => selecionarFormulario(2)} className={shared["link"]}>Esqueci Senha</a> </div>
             </form>
         
   );
