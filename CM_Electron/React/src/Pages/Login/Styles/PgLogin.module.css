@@ -1,0 +1,153 @@
+* {
+    padding: 0 auto;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.global {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+                                                    /* COMEÇO DO CONTAINER LATERAL ESQUERDO*/
+.left-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+.grid-3x1-forma {
+    height: 20%;
+    z-index: 10;
+}
+
+.FormaAzul {
+    width: 60%;
+}
+
+.grid-3x2-logo {
+    height: 80%;
+}
+
+.img-LogoRosTeam {
+    width: 65%;
+    float: right;
+    z-index: 100;
+}
+
+.grid-3x3-line {
+    display: flex;
+    align-items: end;
+    height: 20%;
+}
+
+.LinhaLaranja {
+    width: 85%;
+}
+
+                                                    /* COMEÇO DO CONTAINER CENTRAL*/
+.center-container {
+    border: 1px solid red;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2%;
+}
+
+                                                    /* COMEÇO DO CONTAINER LATERAL DIREITO*/
+.right-container {
+    width: 45%;
+    border: 1px solid red;
+}
+
+.grid-3x1-linha-Az {
+    border: 1px solid black;
+    height: 20%;
+}
+
+.LinhaAzul {   
+    width: 90%;
+    border: 1px solid violet;
+    margin-right: 10%;
+    float: right;
+}
+
+.grid-3x2-forms {
+    border: 1px solid black;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.form {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 999px; /* arredondado total */
+  padding: 12px 16px;
+  background: white;
+  margin-bottom: 16px;
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 40px; /* espaço para o ícone */
+  font-size: 16px;
+  color: #555;
+  background: transparent;
+}
+
+.input-wrapper .icon {
+  position: absolute;
+  left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-wrapper .icon img {
+  width: 20px;
+  height: 20px;
+}
+
+.input-wrapper .toggle-password {
+  position: absolute;
+  right: 16px;
+  cursor: pointer;
+}
+
+.input-wrapper .toggle-password img {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4;
+}
+
+.btn-wrapper {
+    border: 1px solid #eee;
+    border-radius: 999px; /* arredondado total */
+    padding: 12px 16px;
+    background: #82baf3;
+    margin-bottom: 16px;
+    color: #fff;
+}
+
+
+.grid-3x3-forma-Lj {
+    border: 1px solid black;
+    height: 30%;
+    display: flex;
+    justify-content: end;
+}
