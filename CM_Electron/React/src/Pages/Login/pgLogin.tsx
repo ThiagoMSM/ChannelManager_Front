@@ -6,6 +6,9 @@ import LinhaAzul from '../../Assets/Linha Azul.svg';
 import LinhaLaranja from '../../Assets/Linha Laranja.svg';
 import PontosLaranja from '../../Assets/Pontinhos Laranja.svg';
 import styles from './Styles/PgLogin.module.css';
+import cadeado from '../../Assets/icon cadeado.svg';
+import email from '../../Assets/icon email.svg';
+import olho from '../../Assets/icon olho.svg';
 
 function PgLogin() {
   return (
@@ -54,18 +57,18 @@ function PgLogin() {
                 <span className={styles['SimpleText']}>Ainda não possuí uma conta? <a href="http://www.google.com" className={styles['link']}>Fazer Cadastro!</a></span>
                 <div className={styles["input-wrapper"]}>
                     <span className={styles["icon"]}>
-                        <img src="icone-email.svg" alt="Ícone de e-mail" />
+                        <img src={email} alt="Ícone de e-mail" />
                     </span>
                     <input type="email" placeholder="Endereço de e-mail" />
                     </div>
 
                     <div className={styles["input-wrapper"]}>
                     <span className={styles["icon"]}>
-                        <img src="icone-cadeado.svg" alt="Ícone de senha" />
+                        <img src={cadeado} alt="Ícone de senha" />
                     </span>
                     <input type="password" placeholder="Digite sua senha" />
                     <span className={styles["toggle-password"]}>
-                        <img src="icone-visivel.svg" alt="Mostrar senha" />
+                        <img src={olho} alt="Mostrar senha" />
                     </span>
                     </div>
                 <button className={styles["btn-wrapper"]}>Login</button>
