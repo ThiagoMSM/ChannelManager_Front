@@ -50,8 +50,8 @@ function PgLogin() {
         </div>
         <div className={styles['grid-3x2-forms']}>
             <div className={styles["form"]}>
-                <h1>Bem Vindo de Volta!</h1>
-                <span>Ainda não possuí uma conta? <a href="http://www.google.com">Fazer Cadastro</a></span>
+                <p className={styles["welcome-message"]}>Bem Vindo de Volta!</p>
+                <span className={styles['SimpleText']}>Ainda não possuí uma conta? <a href="http://www.google.com" className={styles['link']}>Fazer Cadastro!</a></span>
                 <div className={styles["input-wrapper"]}>
                     <span className={styles["icon"]}>
                         <img src="icone-email.svg" alt="Ícone de e-mail" />
