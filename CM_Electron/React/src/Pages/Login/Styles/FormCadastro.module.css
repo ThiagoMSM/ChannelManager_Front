@@ -1,14 +1,18 @@
-.link_register{
+.welcome-message-bold {
+    font-size: 25px;
+    font-weight: 'Tommy_Bold', sans-serif;
+}
+.link_login{
     color: #f2624cad;
     text-decoration: none;
     font-family: 'Tommy_Bold', sans-serif;
     cursor: pointer;
 }
-.link_register:hover{
+.link_login:hover{
     color: #F2634C;
     text-decoration: underline;
 }
-.forgot-password-div{
+.forgot-login-div{
     display: flex;
     justify-content: center;
 }

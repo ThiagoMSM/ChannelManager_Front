@@ -1,8 +1,5 @@
 //Hash routes se encontra no app.tsx
-import PagLogin from './Pages/Login/PagLogin';
-import PagFormCadastro from './Pages/Login/Components/FormCadastro';
-import PagFormRecuperarSenha from './Pages/Login/Components/FormRecuperarSenha';
-import PagFormTrocaSenha from './Pages/Login/Components/FormTrocaSenha';
+
 import PgLogin from './Pages/Login/pgLogin';
 
 
@@ -13,9 +10,7 @@ export default function AppRoutes() {
         <Routes>
             <Route path="/" element={<Navigate to="/PgLogin" />} />
             <Route path="/PgLogin" element={<PgLogin />} />
-            <Route path="/PagFormCadastro" element={<PagFormCadastro />} />
-            <Route path="/PagFormRecuperarSenha" element={<PagFormRecuperarSenha />} />
-            <Route path="/PagFormTrocaSenha" element={<PagFormTrocaSenha />} />
+
         </Routes>
     );
 }

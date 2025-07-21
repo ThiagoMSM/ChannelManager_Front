@@ -1,22 +1,26 @@
-import React, { useState } from "react";
+import React, { useState, ReactElement, cloneElement } from "react";
+
+interface FormularioProps {
+  selecionarFormulario: (novoIndex: number) => void;
+}
+
 interface EscolheFormProps {
-  children: React.ReactNode[];
+  children: ReactElement<FormularioProps>[];
 }
 
 const EscolheForm: React.FC<EscolheFormProps> = ({ children }) => {
   const [indexSelecionado, setIndexSelecionado] = useState(0);
 
-  const handleSelecionar = (index: number) => {
-    console.log("Selecionando formulário:", index);
-    setIndexSelecionado(index);
-  };
-
+  const filhosComProps = children.map((child, index) =>
+    cloneElement(child, {
+      selecionarFormulario: (novoIndex: number) => setIndexSelecionado(novoIndex),
+      key: index
+    })
+  );
 
   return (
     <div className="EscolheForm">
-      
-
-      <div>{children[indexSelecionado]}</div>
+      <div>{filhosComProps[indexSelecionado]}</div>
     </div>
   );
 };
