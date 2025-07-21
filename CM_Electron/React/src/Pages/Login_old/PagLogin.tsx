@@ -1,9 +1,9 @@
 import HeaderLogin from "../../Components/Headers/HeaderLogin";
 import EscolheForm from "./Components/EscolheForm";
-import FormCadastro from "./Components/FormCadastro";
+// import FormCadastro from "./Components/FormCadastro";
 import Formlogin from "./Components/FormLogin";
-import FormRecuperarSenha from "./Components/FormRecuperarSenha";
-import FormTrocaSenha from "./Components/FormTrocaSenha"; 
+import FormRecuperarSenha from "../Login/Components/FormRecuperarSenha";
+import FormTrocaSenha from "../Login/Components/FormTrocaSenha"; 
 
 import './Styles/PagLogin.css';
 function PagLogin() {

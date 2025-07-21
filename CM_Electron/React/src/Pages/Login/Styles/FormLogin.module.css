@@ -1,0 +1,13 @@
+.link_register{
+    color: #f2624cad;
+    text-decoration: none;
+    font-family: 'Tommy_Bold', sans-serif;
+}
+.link_register:hover{
+    color: #F2634C;
+    text-decoration: underline;
+}
+.forgot-password-div{
+    display: flex;
+    justify-content: center;
+}

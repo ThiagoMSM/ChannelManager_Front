@@ -1,7 +1,7 @@
 
 function FormCadastro() {
   return (
-    <div>FormCadastro</div>
+    <></>
   )
 }
 

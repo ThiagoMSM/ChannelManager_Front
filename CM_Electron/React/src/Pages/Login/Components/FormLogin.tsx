@@ -1,94 +1,45 @@
-import '../Styles/FormLogin.css';
-import BannerLogin from './../../../Assets/BannerLogin.svg'
-import { useNavigate } from 'react-router';
-import ButtonLogin from './../../../Components/Button/ButtonLogin';
+
+import styles from '../Styles/FormLogin.module.css';
+import shared from '../Styles/Forms.module.css';
+import cadeado from '../../../Assets/icon cadeado.svg';
+import icon_email from '../../../Assets/icon email.svg';
+import olho from '../../../Assets/icon olho.svg';
+import olho_fechado from '../../../Assets/icon olho_fechado.svg';
+
+
 import { useState } from 'react';
 
-
-
-function FormLogin() {
-  const navigate = useNavigate();
-
-
-
-
-function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-  event.preventDefault(); 
-  const form = event.currentTarget;
-  const formData = new FormData(form);  
-  setCarregando(true);
-  setTimeout(() => {
-    setCarregando(false);
-    navigate('/PagFormPrincipal');
-  }, 1000);
-
-}
-
-const [carregando, setCarregando] = useState(false);
+function PgLogin() {
+  const [TypePassword, setTypePassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   return (
-    <div className='FormLogin'>
-      <div className="Banner">
-        <img className='BannerLogin' src={BannerLogin} alt="Banner Login" />
-
-      </div>
-      <div className='FormLoginContainer'>
-        <div className='BemVindo'>
-          <p className='BemVindoH1'>Bem vindo de volta!</p>
-          <p className='TextoSimples'>Novo usuário? <a onClick={() => { navigate('/PagFormCadastro') }} className='PCadastrar'>Crie uma conta</a> </p>
-        </div>
-        
-        <form className='Form' method="POST" onSubmit={handleSubmit}>
-          <div className='InputContainer'>
-            <label className="email">E-mail</label>
-            <input
-              type="email"
-              className='Input'
-              id="email"
-              name="email"
-              required
-              placeholder='Digite seu e-mail'
-            />
-          </div>
-
-          <div className='InputContainer'>
-            <input
-              type="password"
-              className='Input'
-              id="password"
-              name="password"
-              required
-              placeholder='Senha'
-            />
-          </div>
-
-          <div className='CabecalhoForms'>
-
-          <a onClick={() => {navigate('/PagFormRecuperarSenha')}} className='EsqueceuSenha'>Esqueceu a senha?</a>
-
    
-          {/* <button type="submit" className='BtnConecte'>Conecte-se</button> */}
+            <form className={shared["form"]} /* onClick={handleSubmit} */>
+                <p className={shared["welcome-message"]}>Bem Vindo de Volta!</p>
+                <span className={shared['SimpleText']}>Ainda não possuí uma conta? <a href="http://www.google.com" className={styles['link_register']}>Fazer Cadastro!</a></span>
+                <div className={shared["input-wrapper"]}>''
+                    <span className={shared["icon"]}>
+                        <img src={icon_email} alt="Ícone de e-mail" />
+                    </span>
+                    <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </div>
 
-          <ButtonLogin carregando={carregando} FnType={'submit'} texto="Conectar-se" />
-          </div>
-
-          <div className='Footer'>
-            <hr className='Divisoria' />
-            <div className="checkboxContainer">
-              <input
-                type="checkbox"
-                id="Termos"
-                name="Termos"
-              />
-              <label htmlFor="Termos" className='TermosLabel'>Concordo com os <a href="/Termos" className='TermosLink'>Termos de Uso</a> e <a href="/Privacidade" className='TermosLink'>Política de Privacidade</a></label>
-            </div>
-          </div>
-        </form>
-          
-
-      </div>
-    </div>
-  )
+                    <div className={shared["input-wrapper"]}>
+                    <span className={shared["icon"]}>
+                        <img src={cadeado} alt="Ícone de senha" />
+                    </span>
+                    <input type={TypePassword ? "text" : "password"} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <span className={shared["toggle-password"]}>
+                        <img src={TypePassword ? olho_fechado : olho} alt="Mostrar senha" onClick={() => setTypePassword(!TypePassword)}/>
+                    </span>
+                    </div>
+                <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Login</button>
+                <div className={styles["forgot-password-div"]}> <a href="" className={shared["link"]}>Esqueci Senha</a> </div>
+            </form>
+        
+  );
 }
 
-export default FormLogin
+export default PgLogin;

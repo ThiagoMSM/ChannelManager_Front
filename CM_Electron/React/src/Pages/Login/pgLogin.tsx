@@ -6,11 +6,17 @@ import LinhaAzul from '../../Assets/Linha Azul.svg';
 import LinhaLaranja from '../../Assets/Linha Laranja.svg';
 import PontosLaranja from '../../Assets/Pontinhos Laranja.svg';
 import styles from './Styles/PgLogin.module.css';
-import cadeado from '../../Assets/icon cadeado.svg';
-import email from '../../Assets/icon email.svg';
-import olho from '../../Assets/icon olho.svg';
+import EscolheForm from './Components/EscolheForm';
+import Formlogin from './Components/FormLogin';
+import FormRecuperarSenha from './Components/FormRecuperarSenha';
+import FormTrocaSenha from './Components/FormTrocaSenha';
+
+
+
 
 function PgLogin() {
+ 
+
   return (
     <div className={styles.global}>
       <div className={styles['left-container']}>
@@ -52,28 +58,11 @@ function PgLogin() {
             <img src={LinhaAzul} alt="" className={styles['LinhaAzul']}/>
         </div>
         <div className={styles['grid-3x2-forms']}>
-            <div className={styles["form"]}>
-                <p className={styles["welcome-message"]}>Bem Vindo de Volta!</p>
-                <span className={styles['SimpleText']}>Ainda não possuí uma conta? <a href="http://www.google.com" className={styles['link']}>Fazer Cadastro!</a></span>
-                <div className={styles["input-wrapper"]}>
-                    <span className={styles["icon"]}>
-                        <img src={email} alt="Ícone de e-mail" />
-                    </span>
-                    <input type="email" placeholder="Endereço de e-mail" />
-                    </div>
-
-                    <div className={styles["input-wrapper"]}>
-                    <span className={styles["icon"]}>
-                        <img src={cadeado} alt="Ícone de senha" />
-                    </span>
-                    <input type="password" placeholder="Digite sua senha" />
-                    <span className={styles["toggle-password"]}>
-                        <img src={olho} alt="Mostrar senha" />
-                    </span>
-                    </div>
-                <button className={styles["btn-wrapper"]}>Login</button>
-                <a href="">Esqueci Senha</a>
-            </div>
+             <EscolheForm>
+              <Formlogin />
+              <FormRecuperarSenha />
+              <FormTrocaSenha />
+            </EscolheForm>
         </div>
         <div className={styles['grid-3x3-forma-Lj']}>
             <img 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './../Styles/EscolheForm.css';
 interface EscolheFormProps {
   children: React.ReactNode[];
 }

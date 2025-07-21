@@ -1,0 +1,49 @@
+Estrutura atualizada feita seguindo o Figma
+https://www.figma.com/design/bItZmoeMI8RcwVkKJvNMoG/Saykrom-Telas?node-id=0-1&p=f
+
+PagLogin.tsx:
+    Abriga o plano de fundo
+    APENAS Indexa os componentes internos e externos
+
+EscolheForm.tsx:
+    Lógica de escolha dos componentes, segundo indexador
+
+FormCadastro.tsx:
+    Formulário de cadastro
+    Não faz nada por si só, depende de funções internas (/Functions)
+
+FormLogin.tsx:
+    Formulário de login
+    Não faz nada por si só, depende de funções internas (/Functions)
+
+FormRecuperarSenha.tsx:
+    Formulário de recuperação de senha
+    Não faz nada por si só, depende de funções internas (/Functions)
+
+FormTrocaSenha:
+    Formulário de alteração de 
+    Não faz nada por si só, depende de funções internas (/Functions)
+
+
+Functions:
+    Funções nesse caminho (/Login) são INTERNAS e EXCLUSIVAS para os componentes e objetos desse caminho (/Login)
+    Funções devem fazer exatamente o que o nome indica. Ex: EfetuaLogin.ts só efetua o login + o que faz sentido viver junto com a lógica de login
+
+    O que faz sentido viver junto com a lógica de login?
+    Validar e sanitizar input ✅
+    Cuidar do storage, JWT, localstorage, redis, etc ✅
+    Retornar alguma informação para o componente pai, código de erro, código de msg, etc ✅
+
+    O que não faz sentido?
+    Mostrar alertas na tela ❌ (o componente pai pega o retorno e decide)
+    Redirecionar o usuário ❌ (o componente pai pega o retorno e decide)
+    Fazer 1001 coisas ❌
+    Ter 4000 linhas e 15 responsabilidades ❌
+
+    Resumo: Ser uma função inteligente o suficiente pra fazer o seu propósito por completo, e burra o suficiente pra não fazer mais do que isso
+
+Types:
+    Tipos comuns entre o sistema dos componentes
+    Ex: Types/Login.ts tem todos os tipos permitidos para o login
+    index.ts junta tudo num indexador só, então pra puxar não precisa procurar o nome específico dentro da pasta types, basta puxar do index.ts
+    
