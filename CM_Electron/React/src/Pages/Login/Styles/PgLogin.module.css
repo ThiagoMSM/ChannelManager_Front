@@ -83,7 +83,12 @@
     align-items: center;
 }
 
-
+.grid-3x3-forma-Lj {
+    border: 1px solid black;
+    height: 30%;
+    display: flex;
+    justify-content: end;
+}
 
 
                                    
