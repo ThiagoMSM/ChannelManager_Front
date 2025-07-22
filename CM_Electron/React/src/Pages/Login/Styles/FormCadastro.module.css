@@ -1,3 +1,7 @@
+.form{
+ border: 2px solid #43c706;
+ 
+}
 .welcome-message-bold {
     font-size: 25px;
     font-weight: 'Tommy_Bold', sans-serif;
@@ -15,4 +19,68 @@
 .forgot-login-div{
     display: flex;
     justify-content: center;
+}
+
+
+
+
+
+
+
+/* Barra de senha forte */
+
+.password-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 10px auto;
+  font-family: sans-serif;
+}
+
+.password-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+}
+
+.password-input.weak {
+  border-color: red;
+}
+
+.password-input.strong {
+  border-color: green;
+}
+
+.password-bar-wrapper {
+  height: 8px;
+  background-color: #eee;
+  border-radius: 6px;
+  margin-top: 8px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.password-bar {
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+  
+}
+
+.password-hint {
+    display: flex;
+  font-size: 14px;
+  margin-top: 4px;
+  color: #666;
+
+
+}
+.password-hint-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     width: 100%;  /* CONTROLANDO O TAMANHO LATERAL DO MINI FORMSSSS  */
+    margin-top: 10px;
+    border: 1px solid #666;
 }
