@@ -29,7 +29,7 @@ function FormRecuperarSenha({ selecionarFormulario }: PgRecuperarSenhaProps) {
 
                    <div className={styles["div-btn-wrapper"]}>
 
-                <button className={email ? styles["btn-wrapper-active"] : styles["btn-wrapper"]}>Enviar e-mail de recuperação</button>
+                <button className={email ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} onClick={email ? () => selecionarFormulario(3) : undefined}>Enviar e-mail de recuperação</button>
                 <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
                    </div>
                 

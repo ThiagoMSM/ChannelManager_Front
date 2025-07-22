@@ -63,7 +63,7 @@ function PgLogin() {
               <Formlogin selecionarFormulario={() => {}} />
               <FormCadastro selecionarFormulario={() => {}} />
               <FormRecuperarSenha selecionarFormulario={() => {}}/>
-              {/* <FormTrocaSenha selecionarFormulario={() => {}}/> */}
+              <FormTrocaSenha selecionarFormulario={() => {}}/>
             </EscolheForm>
         </div>
         <div className={styles['grid-3x3-forma-Lj']}>

@@ -1,0 +1,59 @@
+/* Remover as setinhas do input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+/* input[type="number"] {
+  -moz-appearance: textfield;
+} */
+/* ------------------------------------- */
+.input-wrapper {
+position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #eee;
+  border-radius: 999px; /* arredondado total */
+  padding: 12px 16px;
+  background: white;
+  margin-bottom: 16px;
+  margin-top: 10px;
+  
+}
+
+.input-wrapper input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-left: 40px; /* espaço para o ícone */
+  font-size: 16px;
+  color: #555;
+  background: transparent;
+
+}
+
+.btn-wrapper-white{
+  width: 70%;
+  display: block;
+  border: 1px solid #0575E6;
+  border-radius: 999px; /* arredondado total */
+  padding: 12px 16px;
+  background: #ffffff;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #0575E6;
+}
+.btn-wrapper-white-active {
+  width: 70%;
+  display: block;
+  border: 1px solid #0575E6;
+  border-radius: 999px; /* arredondado total */
+  padding: 12px 16px;
+  background: #0575E6;
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: #ffffff;
+  
+}
