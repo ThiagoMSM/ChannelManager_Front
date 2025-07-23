@@ -161,3 +161,10 @@ margin-top: 1rem;
     justify-content: center;
     /* border: solid 5px #ff00ea; */
 }
+.forgot-password-div{
+    display: flex;
+    width: 85%;
+    /* border: #F2634C solid 1px; */
+    justify-content: center;
+    margin-top: 1rem;
+}
