@@ -10,4 +10,8 @@
 }
 .forgot-password-div{
     display: flex;
+    width: 85%;
+    /* border: #F2634C solid 1px; */
+    justify-content: center;
+    margin-top: 1rem;
 }
