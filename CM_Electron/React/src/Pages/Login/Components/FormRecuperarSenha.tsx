@@ -18,21 +18,24 @@ function FormRecuperarSenha({ selecionarFormulario }: PgRecuperarSenhaProps) {
 
   return (
       <form className={styles["form"]} /* onClick={handleSubmit} */>
-                <p className={styles["welcome-message-bold"]}>Esqueceu a Senha?</p>
+                <p className={styles["welcome-message-bold"]}>Esqueceu sua Senha?</p>
                 <span className={styles['SimpleText-RecuperarSenha']}>Não se preocupe! Basta digitar seu e-mail e enviaremos um link para redefinir sua senha.</span>
-                <div className={shared["input-wrapper"]}>''
-                    <span className={shared["icon"]}>
-                        <img src={icon_email} alt="Ícone de e-mail" />
-                    </span>
-                    <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
+                <div className={styles["main-container"]}>
 
-                   <div className={styles["div-btn-wrapper"]}>
+                <div className={shared["input-wrapper-div"]}>
+                  <div className={shared["input-wrapper"]}>
+                      <span className={shared["icon"]}>
+                          <img src={icon_email} alt="Ícone de e-mail" />
+                      </span>
+                      <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  </div>
+                </div>
 
-                <button className={email ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} onClick={email ? () => selecionarFormulario(3) : undefined}>Enviar e-mail de recuperação</button>
-                <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
-                   </div>
-                
+               
+                  <button className={email ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} onClick={email ? () => selecionarFormulario(3) : undefined}>Enviar e-mail de recuperação</button>
+                  <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
+             
+              </div>
             </form>
   )
 }

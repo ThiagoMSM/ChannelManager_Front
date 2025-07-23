@@ -20,58 +20,23 @@ function PgLogin() {
 
   return (
     <div className={styles.global}>
-      <div className={styles['left-container']}>
-        <div className={styles['grid-3x1-forma']}> 
-            <img src={FormaAzul} alt="" className={styles['FormaAzul']}/>
-        </div>
-        <div className={styles['grid-3x2-logo']}>
-          <img
-            className={styles['img-LogoRosTeam']}
-            src={LogoRosTeam}
-            alt="ROSTeam Logo"
-          />
-        </div>
-        <div className={styles['grid-3x3-line']}>
-            <img 
-                src={LinhaLaranja} 
-                alt="" 
-                className={styles['LinhaLaranja']} />
-                
-        </div>
-      </div>
+      <div className={styles['background']}>
+        <div className={styles['global-container']}>
 
-      <div className={styles['center-container']}>
-        <div className={styles['center-container-high-dots']}>
-          <img 
-            src={PontosLaranja} 
-            alt="" />
-        </div>
+                    <div className={styles['left-container']}>
+       
+                    </div>
 
-        <div className={styles['center-container-low-dots']}>
-          <img 
-            src={PontosLaranja} 
-            alt="" />
-        </div>
-      </div>
-
-      <div className={styles['right-container']}>
-        <div className={styles['grid-3x1-linha-Az']}> 
-            <img src={LinhaAzul} alt="" className={styles['LinhaAzul']}/>
-        </div>
-        <div className={styles['grid-3x2-forms']}>
-             <EscolheForm>
-              <Formlogin selecionarFormulario={() => {}} />
-              <FormCadastro selecionarFormulario={() => {}} />
-              <FormRecuperarSenha selecionarFormulario={() => {}}/>
-              <FormTrocaSenha selecionarFormulario={() => {}}/>
-            </EscolheForm>
-        </div>
-        <div className={styles['grid-3x3-forma-Lj']}>
-            <img 
-                src={FormaLaranja} 
-                alt=""
-                className={styles['FormaLaranja']} />
-                
+                   <div className={styles['right-container']}>
+                         <div className={styles['grid-3x2-forms']}>
+                              <EscolheForm>
+                               <Formlogin selecionarFormulario={() => {}} />
+                               <FormCadastro selecionarFormulario={() => {}} />
+                               <FormRecuperarSenha selecionarFormulario={() => {}}/>
+                               <FormTrocaSenha selecionarFormulario={() => {}}/>
+                             </EscolheForm>
+                         </div>
+                    </div>
         </div>
       </div>
     </div>

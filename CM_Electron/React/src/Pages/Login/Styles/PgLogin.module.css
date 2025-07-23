@@ -6,89 +6,53 @@
 
 .global {
     width: 100vw;
-    height: 100vh;
+    height: 100vh; 
+}
+.background{
+    background-image: url('../../../Assets/BackgroundLogin.svg');
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+  
+}
+.global-container{
+    width: 100%;
+    height: 100%;
+    border: solid 2px rgb(255, 0, 170);
     display: flex;
     flex-direction: row;
 }
 
                                                     /* COMEÇO DO CONTAINER LATERAL ESQUERDO*/
 .left-container {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-}
-
-.grid-3x1-forma {
-    height: 20%;
-    z-index: 10;
-}
-
-.FormaAzul {
     width: 60%;
-}
-
-.grid-3x2-logo {
-    height: 80%;
-}
-
-.img-LogoRosTeam {
-    width: 65%;
-    float: right;
-    z-index: 100;
-}
-
-.grid-3x3-line {
-    display: flex;
-    align-items: end;
-    height: 20%;
-}
-
-.LinhaLaranja {
-    width: 85%;
-}
-
-                                                    /* COMEÇO DO CONTAINER CENTRAL*/
-.center-container {
-    border: 1px solid red;
-    width: 10%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2%;
+    border: 2px solid red;
 }
+
+
 
                                                     /* COMEÇO DO CONTAINER LATERAL DIREITO*/
 .right-container {
-    width: 45%;
-    border: 1px solid red;
-}
-
-.grid-3x1-linha-Az {
-    border: 1px solid black;
-    height: 20%;
-}
-
-.LinhaAzul {   
-    width: 90%;
-    border: 1px solid violet;
-    margin-right: 10%;
-    float: right;
-}
-
-.grid-3x2-forms {
-    border: 1px solid black;
-    height: 50%;
+    width: 40%;
+    border: 2px solid rgb(102, 255, 0);
     display: flex;
     align-items: center;
 }
 
-.grid-3x3-forma-Lj {
-    border: 1px solid black;
-    height: 30%;
+
+.grid-3x2-forms {
+    /* border: 1px solid black; */
+    height: 50%;
+    width: 100%;
     display: flex;
-    justify-content: end;
+    align-items: center;
 }
+
 
 
                                    

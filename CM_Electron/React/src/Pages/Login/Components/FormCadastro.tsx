@@ -28,7 +28,7 @@ const getStrengthLabel = (score: number): string => {
   switch (score) {
     case 0:
     case 1:
-      return "Sua senha está fraca. Utilize letras maiúsculas, minúsculas, numeros e carácteres especiais.";
+      return "Sua senha fraca. Utilize letras maiúsculas, minúsculas, numeros e carácteres especiais.";
     case 2:
       return "Senha fraca ainda está fraca. Tente adicionar mais caracteres e numeros.";
     case 3:
@@ -76,12 +76,18 @@ function FormCadastro({ selecionarFormulario }: PgCadastroProps) {
                 <p className={styles["welcome-message-bold"]}>Olá!</p>
                 <p className={styles['welcome-message']}>Cadastre-se para começar</p>
                 <span className={shared['SimpleText']}>Já tem uma conta? <a onClick={() => selecionarFormulario(0)} className={styles['link_login']}>Fazer login!</a></span>
-                <div className={shared["input-wrapper"]}>''
+                <div className={shared["main-container"]}>
+<div className={shared["input-wrapper-div"]}>
+
+                <div className={shared["input-wrapper"]}>
                     <span className={shared["icon"]}>
                         <img src={icon_email} alt="Ícone de e-mail" />
                     </span>
                     <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
+                </div>
+</div>
+<div className={shared["input-wrapper-div"]}>
+
 
                     <div className={shared["input-wrapper"]}>
                     <span className={shared["icon"]}>
@@ -89,12 +95,13 @@ function FormCadastro({ selecionarFormulario }: PgCadastroProps) {
                     </span>
                     <input type={TypePassword ? "text" : "password"} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} 
                         style={{ borderColor: getBarColor(strength) }}
-                    />
+                        />
                     <span className={shared["toggle-password"]}>
                         <img src={TypePassword ? olho_fechado : olho} alt="Mostrar senha" onClick={() => setTypePassword(!TypePassword)}/>
                     </span>
                        </div>
 
+</div>
                         {password && (
                           <>
                            <div className={styles["password-bar-wrapper"]}>
@@ -114,11 +121,14 @@ function FormCadastro({ selecionarFormulario }: PgCadastroProps) {
                               
 
 
+<div className={shared["btn-wrapper-div"]}>
 
                 <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Cadastrar</button>
+</div>
                 <div className={styles["forgot-login-div"]}> <a onClick={() => selecionarFormulario(2)} className={shared["link"]}>Esqueci Senha</a> </div>
 {/* ????????????????? Botão de esqueci senha no cadastro não faz sentido, mas fiz mesmo assim */}
 
+                      </div>
             </form>
   )
 }

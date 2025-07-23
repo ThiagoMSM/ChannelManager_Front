@@ -23,26 +23,34 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
   return (
    
             <form className={shared["form"]} /* onClick={handleSubmit} */>
-                <p className={shared["welcome-message"]}>Bem Vindo de Volta!</p>
+                <p className={shared["welcome-message"]}>Bem Vindo de Volta</p>
                 <span className={shared['SimpleText']}>Ainda não possuí uma conta? <a onClick={() => selecionarFormulario(1)} className={styles['link_register']}>Fazer Cadastro!</a></span>
-                <div className={shared["input-wrapper"]}>''
-                    <span className={shared["icon"]}>
-                        <img src={icon_email} alt="Ícone de e-mail" />
-                    </span>
-                    <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    </div>
-
+                <div className={shared["main-container"]}>
+                <div className={shared["input-wrapper-div"]}>
                     <div className={shared["input-wrapper"]}>
-                    <span className={shared["icon"]}>
-                        <img src={cadeado} alt="Ícone de senha" />
-                    </span>
-                    <input type={TypePassword ? "text" : "password"} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
-                    <span className={shared["toggle-password"]}>
-                        <img src={TypePassword ? olho_fechado : olho} alt="Mostrar senha" onClick={() => setTypePassword(!TypePassword)}/>
-                    </span>
+                        <span className={shared["icon"]}>
+                            <img src={icon_email} alt="Ícone de e-mail" />
+                        </span>
+                        <input type="email" placeholder="Endereço de e-mail" value={email} onChange={(e) => setEmail(e.target.value)} />
                     </div>
-                <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Login</button>
+                </div>
+
+                    <div className={shared["input-wrapper-div"]}>
+                        <div className={shared["input-wrapper"]}>
+                        <span className={shared["icon"]}>
+                            <img src={cadeado} alt="Ícone de senha" />
+                        </span>
+                        <input type={TypePassword ? "text" : "password"} placeholder="Digite sua senha" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <span className={shared["toggle-password"]}>
+                            <img src={TypePassword ? olho_fechado : olho} alt="Mostrar senha" onClick={() => setTypePassword(!TypePassword)}/>
+                        </span>
+                        </div>
+                    </div>
+                    <div className={shared["btn-wrapper-div"]}>
+                        <button className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}>Login</button>
+                    </div>
                 <div className={styles["forgot-password-div"]}> <a onClick={() => selecionarFormulario(2)} className={shared["link"]}>Esqueci Senha</a> </div>
+                </div>
             </form>
         
   );

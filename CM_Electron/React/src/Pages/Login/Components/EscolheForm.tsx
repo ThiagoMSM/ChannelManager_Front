@@ -1,5 +1,5 @@
 import React, { useState, ReactElement, cloneElement } from "react";
-
+import styles from '../Styles/Forms.module.css';
 interface FormularioProps {
   selecionarFormulario: (novoIndex: number) => void;
 }
@@ -19,8 +19,8 @@ const EscolheForm: React.FC<EscolheFormProps> = ({ children }) => {
   );
 
   return (
-    <div className="EscolheForm">
-      <div>{filhosComProps[indexSelecionado]}</div>
+    <div className={styles["body"]}>
+      <div className={styles["body"]}>{filhosComProps[indexSelecionado]}</div>
     </div>
   );
 };

@@ -3,8 +3,13 @@
  
 }
 .welcome-message-bold {
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: 'Tommy_Bold', sans-serif;
+}
+.welcome-message {
+    font-size: 1.5rem;
+    font-family: 'Tommy_Regular', sans-serif;
+    color: #333333;
 }
 .link_login{
     color: #f2624cad;
@@ -82,5 +87,5 @@
     align-items: center;
      width: 100%;  /* CONTROLANDO O TAMANHO LATERAL DO MINI FORMSSSS  */
     margin-top: 10px;
-    border: 1px solid #666;
+    /* border: 1px solid #666; */
 }
