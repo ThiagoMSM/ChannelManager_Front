@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import styles from '../Styles/FormLogin.module.css';
 import shared from '../Styles/Forms.module.css';
 
@@ -9,6 +9,7 @@ import olho_fechado from '../../../Assets/icon olho_fechado.svg';
 import { useNavigate } from 'react-router-dom';
 import { notificar } from '../../../Components/Toasts/Toast';
 import { User } from './EscolheForm';
+import { UserContext } from '../../../Context/UserContext';
 
 interface PgLoginProps {
   selecionarFormulario: (index: number) => void;
@@ -20,32 +21,35 @@ interface PgLoginProps {
 function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
 
   const navigator = useNavigate();
-
+  
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [mensagemErro, setMensagemErro] = useState('');
 
-  const login = (email: string, password: string): boolean => {
+  const { user, setUser } = useContext(UserContext);
+
+  const login = (email: string, password: string): any  => {
     for (const user of users) {
       if (user.Email === email && user.data.Password === password) {
         console.log("Login bem-sucedido!");
-        return true;
+        return [true, user];
       }
     }
-    return false;
+    return [false, null];
   };
 
   const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Senha:", password);
-
-    if (login(email, password)) {
+    const ok = login(email, password)
+    
+    if (ok[0]) {
 
       notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
       await new Promise(resolve => setTimeout(resolve, 2000));
       console.log("Usuário autenticado com sucesso!");
+      setUser(ok[1])
       navigator('/PagHome'); // Redireciona para a página inicial
     } else {
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -61,7 +65,6 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
         Ainda não possui uma conta?{' '}
         <a onClick={() => selecionarFormulario(1)} className={styles['link_register']}>Fazer Cadastro!</a>
       </span>
-      {mensagemErro && <p className={shared["error-message"]}>{mensagemErro}</p>}
       <div className={shared["main-container"]}>
         <div className={shared["input-wrapper-div"]}>
           <div className={shared["input-wrapper"]}>
