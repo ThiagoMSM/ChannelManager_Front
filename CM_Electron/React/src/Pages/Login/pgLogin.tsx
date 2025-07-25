@@ -17,33 +17,28 @@ import Background from '../../Assets/BackgroundLogin.svg';
 
 
 function PgLogin() {
- 
+
 
   return (
     <div className={styles.global}>
-
       <div>
-          <img src={Background} className={styles['background']} alt="" />
+        <img src={Background} className={styles['background']} alt="" />
       </div>
-
-        <div className={styles['global-container']}>
-
-                    <div className={styles['left-container']}>
-       
-                    </div>
-
-                   <div className={styles['right-container']}>
-                         <div className={styles['grid-3x2-forms']}>
-                              <EscolheForm>
-                               <Formlogin selecionarFormulario={() => {}} />
-                               <FormCadastro selecionarFormulario={() => {}} />
-                               <FormRecuperarSenha selecionarFormulario={() => {}} setCodigo={() => {}}/>
-                               <FormTrocaSenha selecionarFormulario={() => { } } codigo={''} />
-                               <FormRecriarSenha selecionarFormulario={() => { } }/>
-                             </EscolheForm>
-                         </div>
-                    </div>
+      <div className={styles['global-container']}>
+        <div className={styles['left-container']}>
         </div>
+        <div className={styles['right-container']}>
+          <div className={styles['grid-3x2-forms']}>
+            <EscolheForm>
+              <Formlogin selecionarFormulario={() => { }} users={[]} />
+              <FormCadastro selecionarFormulario={() => { }} />
+              <FormRecuperarSenha selecionarFormulario={() => { }} setCodigo={() => { }} />
+              <FormTrocaSenha selecionarFormulario={() => { }} codigo={''} />
+              <FormRecriarSenha selecionarFormulario={() => { } } codigo={''} users={[]}/>
+            </EscolheForm>
+          </div>
+        </div>
+      </div>
       {/* </div> */}
     </div>
   );

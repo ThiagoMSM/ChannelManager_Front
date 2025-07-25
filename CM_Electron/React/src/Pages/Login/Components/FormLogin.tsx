@@ -8,21 +8,17 @@ import olho from '../../../Assets/icon olho.svg';
 import olho_fechado from '../../../Assets/icon olho_fechado.svg';
 import { useNavigate } from 'react-router-dom';
 import { notificar } from '../../../Components/Toasts/Toast';
+import { User } from './EscolheForm';
 
 interface PgLoginProps {
   selecionarFormulario: (index: number) => void;
+  users: User[];
 }
 
-interface User {
-  Email: string;
-  Password: string;
-}
 
-function PgLogin({ selecionarFormulario }: PgLoginProps) {
-  const users: User[] = [
-    { Email: "Rodrigo@gmail.com", Password: "Rodrigo123" },
-    { Email: "Rafael@gmail.com", Password: "Rafael123" }
-  ];
+
+function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
+
   const navigator = useNavigate();
 
   const [typePassword, setTypePassword] = useState(false);
@@ -32,7 +28,7 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
 
   const login = (email: string, password: string): boolean => {
     for (const user of users) {
-      if (user.Email === email && user.Password === password) {
+      if (user.Email === email && user.data.Password === password) {
         console.log("Login bem-sucedido!");
         return true;
       }

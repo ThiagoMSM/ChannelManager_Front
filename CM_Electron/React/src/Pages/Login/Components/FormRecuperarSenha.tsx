@@ -21,7 +21,7 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
 
     // Gera um código aleatório de 4 dígitos
   const codigo = Math.floor(1000 + Math.random() * 9000); 
-  setCodigo(codigo.toString()); 
+  setCodigo(codigo.toString() + " " + email); 
  
     
 

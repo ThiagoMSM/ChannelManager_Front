@@ -2,9 +2,34 @@ import React, { useState, ReactElement, cloneElement } from "react";
 import styles from '../Styles/Forms.module.css';
 interface FormularioProps {
   selecionarFormulario: (novoIndex: number) => void;
-   setCodigo: (codigo: string) => void;  // adiciona aqui
-    codigo?: string;  
+  setCodigo: (codigo: string) => void;  // adiciona aqui
+  codigo?: string;
+  users: any;
 }
+
+export interface User {
+  Email: string;
+  data: {
+    Username: string;
+    Password: string;
+  };
+}
+
+
+let users: User[] = [
+  {
+    Email: "Rodrigo@gmail.com", data: {
+      Username: "Rodrigo",
+      Password: "Rodrigo123"
+    }
+  },
+  {
+    Email: "Rafael@gmail.com", data: {
+      Username: "Rodrigo",
+      Password: "Rafael123"
+    }
+  },
+];
 
 interface EscolheFormProps {
   children: ReactElement<FormularioProps>[];
@@ -20,6 +45,7 @@ const EscolheForm: React.FC<EscolheFormProps> = ({ children }) => {
       setCodigo, // passa função para setar o código no pai
       codigo,    // passa o código atual para o filho (opcional)
       key: index,
+      users: users
     })
   );
 
