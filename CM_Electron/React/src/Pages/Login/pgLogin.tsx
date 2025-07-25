@@ -11,7 +11,7 @@ import Formlogin from './Components/FormLogin';
 import FormRecuperarSenha from './Components/FormRecuperarSenha';
 import FormTrocaSenha from './Components/FormTrocaSenha';
 import FormCadastro from './Components/FormCadastro';
-
+import Background from '../../Assets/BackgroundLogin.svg';
 
 
 
@@ -20,7 +20,11 @@ function PgLogin() {
 
   return (
     <div className={styles.global}>
-      <div className={styles['background']}>
+
+      <div>
+          <img src={Background} className={styles['background']} alt="" />
+      </div>
+
         <div className={styles['global-container']}>
 
                     <div className={styles['left-container']}>
@@ -32,13 +36,13 @@ function PgLogin() {
                               <EscolheForm>
                                <Formlogin selecionarFormulario={() => {}} />
                                <FormCadastro selecionarFormulario={() => {}} />
-                               <FormRecuperarSenha selecionarFormulario={() => {}}/>
-                               <FormTrocaSenha selecionarFormulario={() => {}}/>
+                               <FormRecuperarSenha selecionarFormulario={() => {}} setCodigo={() => {}}/>
+                               <FormTrocaSenha selecionarFormulario={() => { } } codigo={''} />
                              </EscolheForm>
                          </div>
                     </div>
         </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 }
