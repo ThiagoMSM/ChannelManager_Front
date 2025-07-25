@@ -115,6 +115,7 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
           </a>
         </div>
       </div>
+      <button onClick={() => selecionarFormulario(4)}>Tela RecriarSenha</button>
     </form>
   );
 }

@@ -3,14 +3,11 @@ import shared from '../Styles/Forms.module.css';
 import cadeado from '../../../Assets/icon cadeado.svg';
 
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 
-useEffect(() => { //janela muda mas não renderiza
-  // Gatilho forçado de reflow para corrigir o layout
-  window.dispatchEvent(new Event('resize'));
-}, []);
+
 
 
 interface FormTrocaSenhaProps {
