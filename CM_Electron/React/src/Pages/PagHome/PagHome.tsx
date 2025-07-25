@@ -5,9 +5,12 @@ import { useContext } from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { notificar } from '../../Components/Toasts/Toast';
+import Rodrigo from './Assets/rodrigo.png'; 
+import rafael from './Assets/Rafael.png'; 
 
 const PagHome: React.FC = () => {
     const { user, setUser } = useContext(UserContext);
+  
 
   const navigator = useNavigate();
     const handleclick = async () =>{
@@ -20,14 +23,12 @@ const PagHome: React.FC = () => {
        <div className={styles.global}>
             <div className={styles["sidebar-div"]}>
 
-
-
-
                 <div className={styles["footer-grid-sidebar-div"]}>
                     <hr className={styles["footer-line"]}/> {/*  Linha branca */}
 
                     <div className={styles["footer-caontaner"]}>
-                        <img src="" className={styles["user-img"]} alt="" />
+                            <img src={ user.data.Username === "Rodrigo" ? Rodrigo : rafael } className={styles["user-img"]} alt=""></img>
+                    
                         <div className={styles["user-text-div"]}>
                             <p className={styles["user-text-name"]}>{user.data.Username}</p>
                             <p className={styles["user-text-email"]}>{user.Email}</p>
@@ -36,10 +37,11 @@ const PagHome: React.FC = () => {
                         <img src={Icon_exit} className={styles["icon-exit"]} onClick={handleclick} />
                     </div>
 
+                    </div>
 
                 </div>
             </div>
-       </div>
+    
     );
 };
 

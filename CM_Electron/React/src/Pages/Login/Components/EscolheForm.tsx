@@ -25,7 +25,7 @@ let users: User[] = [
   },
   {
     Email: "Rafael@gmail.com", data: {
-      Username: "Rodrigo",
+      Username: "Rafael",
       Password: "Rafael123"
     }
   },
