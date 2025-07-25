@@ -1,0 +1,33 @@
+.link_register{
+    color: #f2624cad;
+    text-decoration: none;
+    font-family: 'Tommy_Bold', sans-serif;
+    cursor: pointer;
+}
+.link_register:hover{
+    color: #F2634C;
+    text-decoration: underline;
+}
+.btn-wrapper-div{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: solid 1px #f2624cad; */
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+}
+.btn-wrapper-white{
+    width: 100%;
+    display: block;
+    border: 1px solid #0575E6;
+    border-radius: 999px; /* arredondado total */
+    padding: 12px 16px;
+    background: #ffffff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #0575E6;
+    height: 55px;
+}

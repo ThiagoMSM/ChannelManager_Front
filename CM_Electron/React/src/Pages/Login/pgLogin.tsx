@@ -11,6 +11,7 @@ import Formlogin from './Components/FormLogin';
 import FormRecuperarSenha from './Components/FormRecuperarSenha';
 import FormTrocaSenha from './Components/FormTrocaSenha';
 import FormCadastro from './Components/FormCadastro';
+import FormRecriarSenha from './Components/FormRecriarSenha';
 import Background from '../../Assets/BackgroundLogin.svg';
 
 
@@ -38,6 +39,7 @@ function PgLogin() {
                                <FormCadastro selecionarFormulario={() => {}} />
                                <FormRecuperarSenha selecionarFormulario={() => {}} setCodigo={() => {}}/>
                                <FormTrocaSenha selecionarFormulario={() => { } } codigo={''} />
+                               <FormRecriarSenha selecionarFormulario={() => { } }/>
                              </EscolheForm>
                          </div>
                     </div>
