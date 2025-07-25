@@ -21,8 +21,9 @@ function PgLogin() {
 
   return (
     <div className={styles.global}>
-      <div>
-        <img src={Background} className={styles['background']} alt="" />
+
+      <div className={styles['background']}>
+          
       </div>
       <div className={styles['global-container']}>
         <div className={styles['left-container']}>
