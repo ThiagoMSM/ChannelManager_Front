@@ -9,15 +9,19 @@
     height: 100vh; 
 }
 .background{
-    /* background-image: url('../../../Assets/BackgroundLogin.svg'); */
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: absolute;
-    border: solid 5px rgb(0, 0, 255);
-    z-index: -1;
+   background-image: url('../../../Assets/BackgroundLogin.svg');
+background-size: cover; /* ESTICA conforme a tela */
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+
+position: fixed; /* melhor que absolute nesse caso */
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+
+z-index: -1;
 }
 .global-container{
     width: 100%;

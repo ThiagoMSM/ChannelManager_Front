@@ -22,9 +22,8 @@ function PgLogin() {
   return (
     <div className={styles.global}>
 
-      <div>
-          <img src={Background} className={styles['background']} alt="" />
-      </div>
+      <div className={styles['background']}>
+          
 
         <div className={styles['global-container']}>
 
@@ -44,7 +43,8 @@ function PgLogin() {
                          </div>
                     </div>
         </div>
-      {/* </div> */}
+      
+      </div>
     </div>
   );
 }
