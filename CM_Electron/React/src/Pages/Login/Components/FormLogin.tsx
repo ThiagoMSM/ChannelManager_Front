@@ -7,6 +7,8 @@ import icon_email from '../../../Assets/icon email.svg';
 import olho from '../../../Assets/icon olho.svg';
 import olho_fechado from '../../../Assets/icon olho_fechado.svg';
 import { useNavigate } from 'react-router-dom';
+import { notificar } from '../../../Components/Toasts/Toast';
+
 interface PgLoginProps {
   selecionarFormulario: (index: number) => void;
 }
@@ -21,7 +23,7 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
     { Email: "Rodrigo@gmail.com", Password: "Rodrigo123" },
     { Email: "Rafael@gmail.com", Password: "Rafael123" }
   ];
- const navigator = useNavigate();
+  const navigator = useNavigate();
 
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState('');
@@ -38,19 +40,21 @@ function PgLogin({ selecionarFormulario }: PgLoginProps) {
     return false;
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Senha:", password);
 
     if (login(email, password)) {
-      
-      setMensagemErro("Usuário autenticado com sucesso!");
+
+      notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
+      await new Promise(resolve => setTimeout(resolve, 2000));
       console.log("Usuário autenticado com sucesso!");
       navigator('/PagHome'); // Redireciona para a página inicial
     } else {
-        setMensagemErro("Falha na autenticação. Verifique suas credenciais.");
-        console.log("Falha na autenticação. Verifique suas credenciais.");
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
+      console.log("Falha na autenticação. Verifique suas credenciais.");
     }
   };
 

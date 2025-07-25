@@ -3,6 +3,7 @@ import shared from '../Styles/Forms.module.css';
 import icon_email from '../../../Assets/icon email.svg';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { notificar } from '../../../Components/Toasts/Toast';
 
 interface PgRecuperarSenhaProps {
   selecionarFormulario: (formType: number) => void;
@@ -35,11 +36,12 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
 
     try {
       await emailjs.send(serviceID, templateID, templateParams, userID);
-      alert('E-mail enviado com sucesso!');
+      notificar({mensagem:'E-mail enviado com sucesso!',status:200});
+      await new Promise(resolve => setTimeout(resolve, 2000));
       selecionarFormulario(3);
     } catch (error) {
       console.error('Erro ao enviar:', error);
-      alert('Erro ao enviar e-mail');
+      notificar({mensagem:'Erro ao enviar email',status:400});
     }
   };
 

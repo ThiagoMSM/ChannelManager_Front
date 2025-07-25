@@ -3,14 +3,8 @@ import shared from '../Styles/Forms.module.css';
 import cadeado from '../../../Assets/icon cadeado.svg';
 
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-
-
-useEffect(() => { //janela muda mas não renderiza
-  // Gatilho forçado de reflow para corrigir o layout
-  window.dispatchEvent(new Event('resize'));
-}, []);
 
 
 interface FormTrocaSenhaProps {
@@ -21,57 +15,57 @@ interface FormTrocaSenhaProps {
 
 function FormTrocaSenha({ selecionarFormulario, codigo }: FormTrocaSenhaProps) {
 
-  const [codigoInserido, setCodigoInserido] = useState('');  
+  const [codigoInserido, setCodigoInserido] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
 
-const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // evita o reload da página
 
-    if (codigoInserido != codigo) { 
+    if (codigoInserido != codigo) {
       setMensagemErro('Codigo invalido!');
       console.log(codigoInserido + ' != ' + codigo);
       return;
-    }else {
+    } else {
       alert('Código verificado com sucesso!');
       // selecionarFormulario(0); // Redireciona para o formulário de login
-      
-      
+
+
     }
 
-  
-} 
+
+  }
 
 
 
   return (
-     <form className={shared["form"]} onSubmit={handleSubmit}>
-                <p className={styles["welcome-message-bold"]}>Recuperar senha</p>
-                <span className={styles['SimpleText-RecuperarSenha']}>Digite o código que chegou por e-mail</span>
-                
-                <p className={shared["error-message"]}>{mensagemErro}</p>
+    <form className={shared["form"]} onSubmit={handleSubmit}>
+      <p className={styles["welcome-message-bold"]}>Recuperar senha</p>
+      <span className={styles['SimpleText-RecuperarSenha']}>Digite o código que chegou por e-mail</span>
+
+      <p className={shared["error-message"]}>{mensagemErro}</p>
 
 
-                <div className={styles["main-container"]}>
+      <div className={styles["main-container"]}>
 
-  <div className={styles["input-wrapper-div"]}>
-              <div className={styles["input-wrapper"]}>
-                    <span className={shared["icon"]}>
-                        <img src={cadeado} alt="Ícone de senha" />
-                    </span>
-                    <input type={"number"} placeholder="Digite o código" value={codigoInserido} onChange={(e) => setCodigoInserido(e.target.value)} />
-                    
-                </div>
-  </div>
+        <div className={styles["input-wrapper-div"]}>
+          <div className={styles["input-wrapper"]}>
+            <span className={shared["icon"]}>
+              <img src={cadeado} alt="Ícone de senha" />
+            </span>
+            <input type={"number"} placeholder="Digite o código" value={codigoInserido} onChange={(e) => setCodigoInserido(e.target.value)} />
 
-                      <button className={codigoInserido ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} type="submit">Verificar codigo</button>
-                      <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
-                
-                   
-                </div>
-             
-            </form>
+          </div>
+        </div>
+
+        <button className={codigoInserido ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} type="submit">Verificar codigo</button>
+        <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
+
+
+      </div>
+
+    </form>
   )
-  
+
 }
 
 export default FormTrocaSenha
