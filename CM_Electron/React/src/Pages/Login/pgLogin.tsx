@@ -24,6 +24,7 @@ function PgLogin() {
 
       <div className={styles['background']}>
           
+      </div>
 
         <div className={styles['global-container']}>
 
@@ -44,7 +45,6 @@ function PgLogin() {
                     </div>
         </div>
       
-      </div>
     </div>
   );
 }
