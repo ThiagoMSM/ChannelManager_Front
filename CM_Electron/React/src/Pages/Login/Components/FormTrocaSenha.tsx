@@ -29,13 +29,14 @@ function FormTrocaSenha({ selecionarFormulario, codigo }: FormTrocaSenhaProps) {
   }
 
   return (
-    <form className={shared["form"]} onSubmit={handleSubmit}>
+    <form className={styles["form"]} onSubmit={handleSubmit}>
       <p className={styles["welcome-message-bold"]}>Recuperar senha</p>
       <span className={styles['SimpleText-RecuperarSenha']}>Digite o código que chegou por e-mail</span>
       <p className={shared["error-message"]}>{mensagemErro}</p>
       <div className={styles["main-container"]}>
-        <div className={styles["input-wrapper-div"]}>
-          <div className={styles["input-wrapper"]}>
+
+        <div className={shared["input-wrapper-div"]}>
+          <div className={shared["input-wrapper"]}>
             <span className={shared["icon"]}>
               <img src={cadeado} alt="Ícone de senha" />
             </span>
@@ -45,6 +46,8 @@ function FormTrocaSenha({ selecionarFormulario, codigo }: FormTrocaSenhaProps) {
         </div>
         <button className={codigoInserido ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} type="submit">Verificar codigo</button>
         <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
+     
+
       </div>
     </form>
   )

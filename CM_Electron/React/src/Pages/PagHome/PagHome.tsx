@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Styles/PagHome.module.css';
-import Icon_exit from './Assets/icon-exit.svg';
+
 import { useContext } from 'react';
 import { UserContext } from '../../Context/UserContext';
 import { useNavigate } from 'react-router-dom';
 import { notificar } from '../../Components/Toasts/Toast';
-import Rodrigo from './Assets/rodrigo.png'; 
-import rafael from './Assets/Rafael.png'; 
+
+import Sidebar from './Components/sidebar';
 
 const PagHome: React.FC = () => {
     const { user, setUser } = useContext(UserContext);
@@ -21,26 +21,9 @@ const PagHome: React.FC = () => {
     }
     return (
        <div className={styles.global}>
-            <div className={styles["sidebar-div"]}>
+           <Sidebar />
 
-                <div className={styles["footer-grid-sidebar-div"]}>
-                    <hr className={styles["footer-line"]}/> {/*  Linha branca */}
-
-                    <div className={styles["footer-caontaner"]}>
-                            <img src={ user.data.Username === "Rodrigo" ? Rodrigo : rafael } className={styles["user-img"]} alt=""></img>
-                    
-                        <div className={styles["user-text-div"]}>
-                            <p className={styles["user-text-name"]}>{user.data.Username}</p>
-                            <p className={styles["user-text-email"]}>{user.Email}</p>
-                        </div>
-                        
-                        <img src={Icon_exit} className={styles["icon-exit"]} onClick={handleclick} />
-                    </div>
-
-                    </div>
-
-                </div>
-            </div>
+        </div>
     
     );
 };

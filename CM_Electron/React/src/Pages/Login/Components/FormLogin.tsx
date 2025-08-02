@@ -25,6 +25,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [InputCss, setInputCss] = useState('false')  /*Fazer os inputs vermelhos*/
 
   const { user, setUser } = useContext(UserContext);
 
@@ -92,6 +93,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              
             />
             <span className={shared["toggle-password"]}>
               <img

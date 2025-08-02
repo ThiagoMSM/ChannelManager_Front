@@ -54,6 +54,7 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
       
 
       <div className={styles["main-container"]}>
+        
         <div className={shared["input-wrapper-div"]}>
           <div className={shared["input-wrapper"]}>
             <span className={shared["icon"]}>
@@ -76,13 +77,11 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
           Enviar e-mail de recuperação
         </button>
 
-        <button
-          className={styles["btn-wrapper-white"]}
-          type="button"
-          onClick={() => selecionarFormulario(0)}
-        >
+        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => selecionarFormulario(0)} >
           Cancelar
         </button>
+
+           
       </div>
     </form>
   );

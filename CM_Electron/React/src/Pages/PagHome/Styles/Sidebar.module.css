@@ -1,0 +1,83 @@
+.global{
+    height: 100vh;
+    width: 17vw;
+    position: absolute;
+    position: fixed;
+
+}
+.sidebar-div{
+    /* border: solid 1px #ff0000; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: #1D394E;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}
+.footer-grid-sidebar-div{
+    /* border: solid 1px #00ff00;  */
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    float: inline-start;
+    border-bottom-right-radius: 15px;
+}
+.footer-line{
+    border: solid 0.5px #ffffff;
+}
+.footer-container{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border: rgb(255, 0, 0) 5px solid; */
+    padding: 5px;
+    justify-content: space-between;
+}
+.user-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    /* border: solid 1px #ffffff; */
+}
+.user-text-div{
+    /* border: steelblue 1px solid; */
+    margin-left: 5px;
+    color: #ffffff;
+}
+.icon-exit{
+    width: 30px;
+    height: 30px;
+    /* border: #00ff00 1px solid; */
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+
+/* Modo janela */
+@media (max-width: 1500px) {
+
+.global{
+    height: 100vh;
+    width: 70px; /*Px proposital, mantem o tamanho da sidebar fixo*/
+    position: absolute;
+    position: fixed;
+}
+    .sidebar-div{
+    border: solid 5px #ff0000;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    background-color: #1D394E;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    overflow: hidden;
+}
+}
