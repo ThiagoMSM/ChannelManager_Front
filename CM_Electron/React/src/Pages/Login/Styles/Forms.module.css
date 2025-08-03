@@ -16,6 +16,7 @@
 
 
 
+
 .input-wrapper {
   position: relative;
   display: flex;
@@ -27,8 +28,36 @@
   background: white;
   width: 100%;
   height: 55px;
+  
+
+  outline: none;
+  padding-left: 40px; /* espaço para o ícone */
+  font-size: 16px;
+  color: #555;
+  background: transparent;
 }
-.input-wrapper input {
+.input-wrapper-wrong{
+   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #eee;
+  border-radius: 999px; /* arredondado total */
+  padding: 12px 20px;
+  background: white;
+  width: 100%;
+  height: 55px;
+  border: 1px solid #ff0000;
+
+
+  outline: none;
+  padding-left: 40px; /* espaço para o ícone */
+  font-size: 16px;
+  color: #555;
+  background: transparent;
+
+}
+.input-wrapper-div input {
   border: none;
   outline: none;
   padding-left: 40px; /* espaço para o ícone */
@@ -36,6 +65,8 @@
   color: #555;
   background: transparent;
 }
+
+
 
 .input-wrapper-div{
 /* border: #000000 solid 1px; */
@@ -47,7 +78,7 @@ text-align: center;
 margin-top: 1rem;
 
 }
-.input-wrapper .icon {
+.input-wrapper-div .icon {
   position: absolute;
   left: 16px;
   display: flex;
@@ -55,21 +86,22 @@ margin-top: 1rem;
   justify-content: center;
 }
 
-.input-wrapper .icon img {
+.input-wrapper-div .icon img {
   width: 20px;
   height: 20px;
 }
 
-.input-wrapper .toggle-password {
+.input-wrapper-div .toggle-password {
   position: absolute;
   right: 16px;
   cursor: pointer;
+  
 }
 
-.input-wrapper .toggle-password img {
-  width: 20px;
-  height: 20px;
-  opacity: 0.4;
+.input-wrapper-div .toggle-password img {
+  width: 2vw;
+  height: 2h;
+  opacity: 1;
 }
 
 .btn-wrapper {
@@ -106,7 +138,9 @@ margin-top: 1rem;
     
 }
 
-
+.InputWrong{
+  border-color: red solid 1px;
+}
 
 
 

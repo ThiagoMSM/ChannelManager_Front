@@ -22,7 +22,6 @@ const PagHome: React.FC = () => {
     return (
        <div className={styles.global}>
            <Sidebar />
-
         </div>
     
     );

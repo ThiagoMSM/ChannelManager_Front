@@ -25,7 +25,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [InputCss, setInputCss] = useState('false')  /*Fazer os inputs vermelhos*/
+  const [InputCss, setInputCss] = useState('input-wrapper')  /*Fazer os inputs vermelhos*/
 
   const { user, setUser } = useContext(UserContext);
 
@@ -56,6 +56,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
       await new Promise(resolve => setTimeout(resolve, 2000));
       notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
       console.log("Falha na autenticação. Verifique suas credenciais.");
+      setInputCss('input-wrapper-wrong')
     }
   };
 
@@ -68,7 +69,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
       </span>
       <div className={shared["main-container"]}>
         <div className={shared["input-wrapper-div"]}>
-          <div className={shared["input-wrapper"]}>
+          <div className={shared[InputCss]}>
             <span className={shared["icon"]}>
               <img src={icon_email} alt="Ícone de e-mail" />
             </span>
@@ -83,7 +84,7 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
         </div>
 
         <div className={shared["input-wrapper-div"]}>
-          <div className={shared["input-wrapper"]}>
+          <div className={shared[InputCss]}>
             <span className={shared["icon"]}>
               <img src={cadeado} alt="Ícone de senha" />
             </span>

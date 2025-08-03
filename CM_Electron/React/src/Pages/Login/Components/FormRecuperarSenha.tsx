@@ -80,6 +80,9 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
         <button className={styles["btn-wrapper-white"]} type="button" onClick={() => selecionarFormulario(0)} >
           Cancelar
         </button>
+        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => selecionarFormulario(4)} >
+          Tela2
+        </button>
 
            
       </div>

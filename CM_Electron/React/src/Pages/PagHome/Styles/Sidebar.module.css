@@ -57,8 +57,51 @@
     margin-left: 2%;
     cursor: pointer;
 }
-
-
+.user-text-email{
+     color: #B3BDC9 solid 1px;
+}
+.div{
+    background-color: aqua;
+    height: 10px;
+    width: 10px;
+}
+.header-grid-sidebar-div{
+    width: 100%;
+    height: 100%;
+    /* border: solid #00f50c 1px; */
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+.LogoEros{
+    width: 20vw;
+    height: 20vh;  
+}
+.header-container{
+    /* border: solid #cc00ff 1px; */
+    width: 100%;
+    
+    display: block;
+}
+.header-container-multi-option{
+    /* border: #B3BDC9 solid 1px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    padding: 10px;
+    color: #ffffff;
+}
+.header-container-option{
+    /* border: #B3BDC9 solid 1px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 5vh;
+    padding: 10px;
+    color: #ffffff
+}
 /* Modo janela */
 @media (max-width: 1500px) {
 
@@ -69,7 +112,7 @@
     position: fixed;
 }
     .sidebar-div{
-    border: solid 5px #ff0000;
+    /* border: solid 5px #ff0000; */
     width: 100%;
     height: 100%;
     display: flex;
@@ -79,5 +122,8 @@
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
     overflow: hidden;
+}
+.user-text-div{
+    display: none;
 }
 }
