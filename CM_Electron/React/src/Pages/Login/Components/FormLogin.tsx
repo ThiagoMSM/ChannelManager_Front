@@ -8,15 +8,9 @@ import olho from "../../../Assets/icon olho.svg";
 import olho_fechado from "../../../Assets/icon olho_fechado.svg";
 import { useNavigate } from "react-router-dom";
 import { notificar } from "../../../Components/Toasts/Toast";
-import { User } from "./EscolheForm";
 import { UserContext } from "../../../Context/UserContext";
 import { FazerLogin } from "../Functions/FnLogin"
 
-interface PgLoginProps {
-  users: User[];
-}
-
-let users = 0; //Puxar o usuario
 
 function PgLogin() {
   const navigate = useNavigate();
@@ -24,19 +18,16 @@ function PgLogin() {
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [InputCss, setInputCss] =
-    useState("input-wrapper"); /*Fazer os inputs vermelhos*/
-
-  const { user, setUser } = useContext(UserContext);
+  const [InputCss, setInputCss] = useState("input-wrapper");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      console.log(email)
-      console.log(password)
-      const Response = await FazerLogin({email,password});
+
+      const Response = await FazerLogin({ email: email, senha: password });
 
       console.log(Response)
+
       notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
     } catch (error) {
 
