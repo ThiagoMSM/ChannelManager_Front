@@ -34,14 +34,17 @@ function PgLogin() {
       try{
         const Response = await FazerLogin(email, password);
 
+        console.log("A:" + Response)
         notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
-
-      }catch{
+      }catch (e){
 
          console.log("Falha na autenticação. Verifique suas credenciais.");
+         
+          console.log("A:" + e)
+            notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
       }
     
-    // console.log(Response.data.user);
+    console.log(Response);
     // console.log("Senha:", password);
     // const ok = login(email, password)
 

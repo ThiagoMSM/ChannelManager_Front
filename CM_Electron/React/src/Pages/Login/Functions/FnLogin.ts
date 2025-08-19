@@ -1,4 +1,4 @@
-import { api } from "React/src/config/api"
+import { api } from "../../../config/api"
 
 
 export const FazerLogin = async (email: string, password: string) => {
