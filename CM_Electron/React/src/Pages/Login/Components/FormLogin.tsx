@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { notificar } from "../../../Components/Toasts/Toast";
 import { User } from "./EscolheForm";
 import { UserContext } from "../../../Context/UserContext";
-import {FazerLogin} from "../Functions/FnLogin"
+import { FazerLogin } from "../Functions/FnLogin"
 
 interface PgLoginProps {
   users: User[];
@@ -30,36 +30,20 @@ function PgLogin() {
   const { user, setUser } = useContext(UserContext);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      try{
-        const Response = await FazerLogin(email, password);
+    e.preventDefault();
+    try {
+      console.log(email)
+      console.log(password)
+      const Response = await FazerLogin({email,password});
 
-        console.log("A:" + Response)
-        notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
-      }catch (e){
+      console.log(Response)
+      notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
+    } catch (error) {
 
-         console.log("Falha na autenticação. Verifique suas credenciais.");
-         
-          console.log("A:" + e)
-            notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
-      }
-    
-    console.log(Response);
-    // console.log("Senha:", password);
-    // const ok = login(email, password)
+      console.log(error);
+      notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
+    }
 
-    // if (ok[0]) {
-
-    //   await new Promise(resolve => setTimeout(resolve, 2000));
-    //   console.log("Usuário autenticado com sucesso!");
-    //   setUser(ok[1])
-    //   navigator('/PagHome'); // Redireciona para a página inicial
-    // } else {
-    //   await new Promise(resolve => setTimeout(resolve, 2000));
-    //   notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
-    //   console.log("Falha na autenticação. Verifique suas credenciais.");
-    //   setInputCss('input-wrapper-wrong')
-    // }
   };
 
   return (
