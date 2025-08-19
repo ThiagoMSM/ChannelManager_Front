@@ -4,16 +4,17 @@ import icon_email from '../../../Assets/icon email.svg';
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { notificar } from '../../../Components/Toasts/Toast';
+import { useNavigate } from 'react-router-dom';
 
 interface PgRecuperarSenhaProps {
-  selecionarFormulario: (formType: number) => void;
-  setCodigo: (codigo: string) => void;  // adiciona aqui
   codigo?: string;  
 }
 
-function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenhaProps) {
+function FormRecuperarSenha() {
+   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
+  const [codigo, setCodigo] = useState('');
 
   const handleSendEmail = async (e: React.FormEvent) => {
     e.preventDefault(); // evita o reload da página
@@ -38,7 +39,7 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
       await emailjs.send(serviceID, templateID, templateParams, userID);
       notificar({mensagem:'E-mail enviado com sucesso!',status:200});
       await new Promise(resolve => setTimeout(resolve, 2000));
-      selecionarFormulario(3);
+      navigate("/login/trocar")
     } catch (error) {
       console.error('Erro ao enviar:', error);
       notificar({mensagem:'Erro ao enviar email',status:400});
@@ -77,11 +78,11 @@ function FormRecuperarSenha({ selecionarFormulario, setCodigo }: PgRecuperarSenh
           Enviar e-mail de recuperação
         </button>
 
-        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => selecionarFormulario(0)} >
+        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => navigate("/login/")} >
           Cancelar
         </button>
-        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => selecionarFormulario(4)} >
-          Tela2
+        <button className={styles["btn-wrapper-white"]} type="button" onClick={() => navigate("/login/trocar")} >
+          Tela seguinte, botão atalho
         </button>
 
            

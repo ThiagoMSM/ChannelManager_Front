@@ -1,71 +1,75 @@
-import { useState, useContext } from 'react';
-import styles from '../Styles/FormLogin.module.css';
-import shared from '../Styles/Forms.module.css';
+import { useState, useContext } from "react";
+import styles from "../Styles/FormLogin.module.css";
+import shared from "../Styles/Forms.module.css";
 
-import cadeado from '../../../Assets/icon cadeado.svg';
-import icon_email from '../../../Assets/icon email.svg';
-import olho from '../../../Assets/icon olho.svg';
-import olho_fechado from '../../../Assets/icon olho_fechado.svg';
-import { useNavigate } from 'react-router-dom';
-import { notificar } from '../../../Components/Toasts/Toast';
-import { User } from './EscolheForm';
-import { UserContext } from '../../../Context/UserContext';
+import cadeado from "../../../Assets/icon cadeado.svg";
+import icon_email from "../../../Assets/icon email.svg";
+import olho from "../../../Assets/icon olho.svg";
+import olho_fechado from "../../../Assets/icon olho_fechado.svg";
+import { useNavigate } from "react-router-dom";
+import { notificar } from "../../../Components/Toasts/Toast";
+import { User } from "./EscolheForm";
+import { UserContext } from "../../../Context/UserContext";
+import {FazerLogin} from "../Functions/FnLogin"
 
 interface PgLoginProps {
-  selecionarFormulario: (index: number) => void;
   users: User[];
 }
 
+let users = 0; //Puxar o usuario
 
+function PgLogin() {
+  const navigate = useNavigate();
 
-function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
-
-  const navigator = useNavigate();
-  
   const [typePassword, setTypePassword] = useState(false);
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [InputCss, setInputCss] = useState('input-wrapper')  /*Fazer os inputs vermelhos*/
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [InputCss, setInputCss] =
+    useState("input-wrapper"); /*Fazer os inputs vermelhos*/
 
   const { user, setUser } = useContext(UserContext);
 
-  const login = (email: string, password: string): any  => {
-    for (const user of users) {
-      if (user.Email === email && user.data.Password === password) {
-        console.log("Login bem-sucedido!");
-        return [true, user];
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      try{
+        const Response = await FazerLogin(email, password);
+
+        notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
+
+      }catch{
+
+         console.log("Falha na autenticação. Verifique suas credenciais.");
       }
-    }
-    return [false, null];
-  };
-
-  const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Email:", email);
-    console.log("Senha:", password);
-    const ok = login(email, password)
     
-    if (ok[0]) {
+    // console.log(Response.data.user);
+    // console.log("Senha:", password);
+    // const ok = login(email, password)
 
-      notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      console.log("Usuário autenticado com sucesso!");
-      setUser(ok[1])
-      navigator('/PagHome'); // Redireciona para a página inicial
-    } else {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
-      console.log("Falha na autenticação. Verifique suas credenciais.");
-      setInputCss('input-wrapper-wrong')
-    }
+    // if (ok[0]) {
+
+    //   await new Promise(resolve => setTimeout(resolve, 2000));
+    //   console.log("Usuário autenticado com sucesso!");
+    //   setUser(ok[1])
+    //   navigator('/PagHome'); // Redireciona para a página inicial
+    // } else {
+    //   await new Promise(resolve => setTimeout(resolve, 2000));
+    //   notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
+    //   console.log("Falha na autenticação. Verifique suas credenciais.");
+    //   setInputCss('input-wrapper-wrong')
+    // }
   };
 
   return (
     <form className={shared["form"]} onSubmit={handleSubmit}>
       <p className={shared["welcome-message"]}>Bem Vindo de Volta</p>
-      <span className={shared['SimpleText']}>
-        Ainda não possui uma conta?{' '}
-        <a onClick={() => selecionarFormulario(1)} className={styles['link_register']}>Fazer Cadastro!</a>
+      <span className={shared["SimpleText"]}>
+        Ainda não possui uma conta?{" "}
+        <a
+          onClick={() => navigate("/login/cadastro")}
+          className={styles["link_register"]}
+        >
+          Fazer Cadastro!
+        </a>
       </span>
       <div className={shared["main-container"]}>
         <div className={shared["input-wrapper-div"]}>
@@ -94,7 +98,6 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              
             />
             <span className={shared["toggle-password"]}>
               <img
@@ -109,19 +112,25 @@ function PgLogin({ selecionarFormulario,users }: PgLoginProps) {
         <div className={shared["btn-wrapper-div"]}>
           <button
             type="submit"
-            className={email && password ? shared["btn-wrapper-active"] : shared["btn-wrapper"]}
+            className={
+              email && password
+                ? shared["btn-wrapper-active"]
+                : shared["btn-wrapper"]
+            }
           >
             Login
           </button>
         </div>
 
         <div className={shared["forgot-password-div"]}>
-          <a onClick={() => selecionarFormulario(2)} className={shared["link"]}>
+          <a
+            onClick={() => navigate("/login/recuperar")}
+            className={shared["link"]}
+          >
             Esqueci Senha
           </a>
         </div>
       </div>
-      
     </form>
   );
 }

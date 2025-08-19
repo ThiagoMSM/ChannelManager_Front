@@ -3,29 +3,29 @@ import shared from '../Styles/Forms.module.css';
 import cadeado from '../../../Assets/icon cadeado.svg';
 import { useState } from 'react';
 import { notificar } from '../../../Components/Toasts/Toast';
-
+import { useNavigate } from 'react-router-dom';
 interface FormTrocaSenhaProps {
-  selecionarFormulario: (formType: number) => void;
+ 
   codigo: string;
 }
 
-function FormTrocaSenha({ selecionarFormulario, codigo }: FormTrocaSenhaProps) {
-
+function FormTrocaSenha() {
+ const navigate = useNavigate();
   const [codigoInserido, setCodigoInserido] = useState('');
   const [mensagemErro, setMensagemErro] = useState('');
 
   const handleSubmit = async(e: React.FormEvent) => {
     e.preventDefault(); // evita o reload da página
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    if (codigoInserido != codigo.split(' ')[0].trim()) {
-      notificar({mensagem:"Código Inválido!",status:404})
-      console.log(codigoInserido + ' != ' + codigo.split(' ')[0].trim());
+    // await new Promise(resolve => setTimeout(resolve, 2000));
+    // if (codigoInserido != codigo.split(' ')[0].trim()) {
+    //   notificar({mensagem:"Código Inválido!",status:404})
+    //   console.log(codigoInserido + ' != ' + codigo.split(' ')[0].trim());
       
-      return;
-    } else {
-      notificar({mensagem:"Código verificado com sucesso!",status:200})
-      selecionarFormulario(4); // Redireciona para o formulário de login
-    }
+    //   return;
+    // } else {
+    //   notificar({mensagem:"Código verificado com sucesso!",status:200})
+    // }
+      navigate("/login/recriar"); // Redireciona para o formulário de login
   }
 
   return (
@@ -45,7 +45,8 @@ function FormTrocaSenha({ selecionarFormulario, codigo }: FormTrocaSenhaProps) {
           </div>
         </div>
         <button className={codigoInserido ? styles["btn-wrapper-active"] : styles["btn-wrapper"]} type="submit">Verificar codigo</button>
-        <button className={styles["btn-wrapper-white"]} onClick={() => selecionarFormulario(0)}>Cancelar</button>
+        <button className={styles["btn-wrapper-white"]} onClick={() =>  navigate("/login/")}>Cancelar</button>
+        <button className={styles["btn-wrapper-white"]} onClick={() =>  navigate("/login/recriar")}>Cancelar</button>
      
 
       </div>

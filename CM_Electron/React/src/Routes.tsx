@@ -6,12 +6,11 @@ import PagHome from './Pages/PagHome/PagHome';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
 export default function AppRoutes() {
-    return (
-        <Routes>
-            <Route path="/" element={<Navigate to="/PgLogin" />} />
-            <Route path="/PgLogin" element={<PgLogin />} />
-            <Route path="/PagHome" element={<PagHome />} />
-            
-        </Routes>   
-    );
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login/" replace />} />
+      <Route path="/login/*" element={<PgLogin />} />
+      <Route path="/home" element={<PagHome />} />
+    </Routes>
+  );
 }

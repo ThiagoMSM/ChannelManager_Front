@@ -11,16 +11,16 @@ import { notificar } from '../../../Components/Toasts/Toast';
 import { User } from './EscolheForm';
 
 interface PgRecriarSenhaProsps {
-  selecionarFormulario: (index: number) => void;
+
   codigo: string;
   users: User[];
 }
 
 
 
-function PgRecriarSenha({ selecionarFormulario, codigo, users }: PgRecriarSenhaProsps) {
+function PgRecriarSenha() {
 
-  const navigator = useNavigate();
+  const navigate = useNavigate();
 
   const [ShowPassword, setShowPassword] = useState(false);
   const [ShowConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -31,24 +31,24 @@ function PgRecriarSenha({ selecionarFormulario, codigo, users }: PgRecriarSenhaP
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    if (password !== confirmPassword) {
-      notificar({ mensagem: "Senhas não coincidem!", status: 400 })
-      return
-    }
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    // if (password !== confirmPassword) {
+    //   notificar({ mensagem: "Senhas não coincidem!", status: 400 })
+    //   return
+    // }
 
-    if (password.length < 6) {
-      notificar({ mensagem: "Senha deve ter no mínimo 6 caracteres!", status: 500 })
-      return
-    }
+    // if (password.length < 6) {
+    //   notificar({ mensagem: "Senha deve ter no mínimo 6 caracteres!", status: 500 })
+    //   return
+    // }
 
 
 
-    let userAlvo = users.find((u) => u.Email === codigo.split(' ')[1].trim());
-    userAlvo.data.Password = password;
-    notificar({ mensagem: "Senha alterada com sucesso!", status: 200 })
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    selecionarFormulario(0);
+    // let userAlvo = users.find((u) => u.Email === codigo.split(' ')[1].trim());
+    // userAlvo.data.Password = password;
+    // notificar({ mensagem: "Senha alterada com sucesso!", status: 200 })
+    // await new Promise(resolve => setTimeout(resolve, 1000));
+    navigate("/login/");
   };
 
   return (
@@ -56,7 +56,7 @@ function PgRecriarSenha({ selecionarFormulario, codigo, users }: PgRecriarSenhaP
       <p className={shared["welcome-message"]}>Criar nova senha</p>
       <span className={shared['SimpleText']}>
         É novo por aqui? {' '}
-        <a onClick={() => selecionarFormulario(1)} className={styles['link_register']}>Crie uma nova conta</a>
+        <a onClick={() =>  navigate("/login/")} className={styles['link_register']}>Crie uma nova conta</a>
       </span>
 
       <div className={shared["main-container"]}>
@@ -112,7 +112,7 @@ function PgRecriarSenha({ selecionarFormulario, codigo, users }: PgRecriarSenhaP
           <button
             type="button"
             className={styles["btn-wrapper-white"]}
-            onClick={() => selecionarFormulario(0)}
+            onClick={() =>  navigate("/login/")}
           >
             Cancelar
           </button>
