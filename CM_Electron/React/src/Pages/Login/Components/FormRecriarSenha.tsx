@@ -8,12 +8,12 @@ import olho from '../../../Assets/icon olho.svg';
 import olho_fechado from '../../../Assets/icon olho_fechado.svg';
 import { useNavigate } from 'react-router-dom';
 import { notificar } from '../../../Components/Toasts/Toast';
-import { User } from './EscolheForm';
+
 
 interface PgRecriarSenhaProsps {
 
   codigo: string;
-  users: User[];
+  // users: User[];
 }
 
 

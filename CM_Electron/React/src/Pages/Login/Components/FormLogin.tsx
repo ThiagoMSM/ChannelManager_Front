@@ -8,33 +8,34 @@ import olho from "../../../Assets/icon olho.svg";
 import olho_fechado from "../../../Assets/icon olho_fechado.svg";
 import { useNavigate } from "react-router-dom";
 import { notificar } from "../../../Components/Toasts/Toast";
-import { UserContext } from "../../../Context/UserContext";
-import { FazerLogin } from "../Functions/FnLogin"
-
+import { FazerLogin } from "../Functions/FnLogin";
+import useLocalStorage from "../../../hooks/uselocalStorage";
+import { useAuth } from "React/src/Context/UserContext";
 
 function PgLogin() {
   const navigate = useNavigate();
+  const {login} = useAuth();
 
   const [typePassword, setTypePassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [InputCss, setInputCss] = useState("input-wrapper");
 
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-
-      const Response = await FazerLogin({ email: email, senha: password });
-
-      console.log(Response)
-
+      const response = await FazerLogin({ email: email, senha: password });
+      console.log(response);
+      login(response.token, response.user)
       notificar({ mensagem: "Usuário autenticado com sucesso!", status: 200 });
     } catch (error) {
-
       console.log(error);
-      notificar({ mensagem: "Falha na autenticação. Verifique suas credenciais.", status: 400 });
+      notificar({
+        mensagem: "Falha na autenticação. Verifique suas credenciais.",
+        status: 400,
+      });
     }
-
   };
 
   return (
