@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { notificar } from "../../../Components/Toasts/Toast";
 import { FazerLogin } from "../Functions/FnLogin";
 import useLocalStorage from "../../../hooks/uselocalStorage";
-import { useAuth } from "React/src/Context/UserContext";
+import { useAuth } from "../../../Context/UserContext"; 
 
 function PgLogin() {
   const navigate = useNavigate();
